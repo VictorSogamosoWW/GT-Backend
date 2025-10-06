@@ -1,4 +1,6 @@
 const express = require('express');
+//Controllers
+const filtrarJuegosPlataforma = require('../controllers/juegos_controller');
 //Router
 const router = express.Router();
 
@@ -7,12 +9,6 @@ const router = express.Router();
 router.get('/', (req, res) => (res.send('Servidor corriendo y visualizando el endpoint base')));
 
 //Juegos completados y obtener juegos por plataforma
-router.get('/juegos', (req,res)=>{
-    const { plataforma } = req.query;
-    const resultado = plataforma
-    ? juegos_completados.filter(juego => juego.plataforma === plataforma)
-    : juegos_completados;
-    res.send(resultado);
-})
+router.get('/juegos', filtrarJuegosPlataforma);
 
 module.exports = router
