@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
-const routes = require('../routes/routes');
-const conectarDB = require('../db');
+const routes = require('./routes/routes');
+const conectarDB = require('./db');
 
 //Usar rutas
 app.use(routes);
