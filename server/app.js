@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const routes = require('./routes/routes');
 const conectarDB = require('./db');
+const juegoBAO = require('./BAO/juegoBAO');
 
 //Usar rutas
 app.use(routes);
