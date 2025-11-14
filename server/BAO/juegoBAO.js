@@ -1,6 +1,6 @@
 const juegoDAO = require("../DAO/juegoDAO");
 
-export async function crearJuego(req, res){
+async function crearJuego(req, res){
     try{
         const juegos = await juegoDAO.crear(req.body);
         res.json(juegos);
@@ -9,3 +9,4 @@ export async function crearJuego(req, res){
     }
 };
 
+module.exports = crearJuego;

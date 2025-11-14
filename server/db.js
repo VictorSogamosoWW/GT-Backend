@@ -1,7 +1,7 @@
 require('dotenv').config("../.env");
 const mongoose = require("mongoose");
 
-const uri = process.env.MONGODB_URI;
+const uri = process.env.MONGO_URI;
 
 async function conectarDB(){
     try{
@@ -13,4 +13,4 @@ async function conectarDB(){
     }
 }
 
-module.exports = conectarDB
+module.exports = conectarDB;

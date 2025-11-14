@@ -7,5 +7,4 @@ const juegoSchema = new mongoose.Schema({
   completado: { type: Boolean, default: false }
 }, { timestamps: true });
 
-// Tercer parámetro "juegos" para forzar el nombre de la colección
 module.exports = mongoose.model('Juego', juegoSchema, 'juegos');

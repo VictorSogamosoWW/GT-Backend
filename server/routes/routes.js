@@ -11,4 +11,4 @@ router.get('/', (req, res) => (res.send('Servidor corriendo y visualizando el en
 //Juegos completados y obtener juegos por plataforma
 router.get('/juegos', filtrarJuegosPlataforma);
 
-module.exports = router
+module.exports = router;
