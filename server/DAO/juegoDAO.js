@@ -1,15 +1,15 @@
 const Juego = require('../models/juego');
 
 const juegoDAO = {
-    crear: async function (data) {
-        await Juego.create(data);
+    async crear(juegoData) {
+        const nuevoJuego = new Juego(juegoData);
+        return await nuevoJuego.save();
     },
 
-    obtenerTodos: async () => await Juego.find(),
+    async obtenerTodos() {
+        return await Juego.find({});
+    }
 
-    actualizar: async (id, data) => await Juego.findByIdAndUpdate(id, data, {new: true}),
-    
-    eliminar: async (id) => await Juego.findByIdAndDelete(id),
-}
+};
 
 module.exports = juegoDAO;

@@ -1,12 +1,14 @@
-const juegos_completados = require('../models/juego');
+const JuegoDAO = require('../DAO/juegoDAO');
 
-filtrarJuegosPlataforma = (req, res) => {
-    const plataforma = req.query;
-
-    const resultado = plataforma
-    ? juegos_completados.filter(juego => juego.plataforma === plataforma)
-    : juegos_completados;
-    res.send(resultado);
+// Leer todos lo juegos desde Atlas
+const obtenerJuegos = async (req, res) => {
+    try{
+        const juegos = await JuegoDAO.obtenerTodos();
+        res.json(juegos)
+    }catch(error){
+        console.error("Error al obtener juegos: ", error);
+        res.status(500).json({error: "Error al obtener los juegos "});
+    }
 };
 
-module.exports = {filtrarJuegosPlataforma}
+module.exports = {obtenerJuegos};

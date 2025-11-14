@@ -1,0 +1,8 @@
+# Dependencias
+
+node_modules/
+
+.env
+.env.*
+
+/server/testInsert.js
