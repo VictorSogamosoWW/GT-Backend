@@ -8,6 +8,10 @@ const juegoDAO = {
 
     async obtenerTodos() {
         return await Juego.find({});
+    },
+
+    async buscarNombreExacto(name){
+        return await Juego.find({name})
     }
 
 };
