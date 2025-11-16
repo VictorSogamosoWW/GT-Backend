@@ -15,9 +15,11 @@ async function obtenerJuegos(req, res) {
 async function crearJuego(req, res) {
     try{
         const juego = await juegoBAO.crearJuego(req.body);
-        res.json(juego);
+
+        return res.status(201).json(juego);
+
     }catch(error){
-        res.status(400).json({error: "Error al crear el juego " + error.message});
+        return res.status(400).json({error: "Error al crear el juego " + error.message});
     }
 }
 

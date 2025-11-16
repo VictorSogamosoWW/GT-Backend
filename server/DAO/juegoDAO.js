@@ -11,7 +11,7 @@ const juegoDAO = {
     },
 
     async buscarNombreExacto(name){
-        return await Juego.find({name})
+        return await Juego.findOne({name})
     }
 
 };
