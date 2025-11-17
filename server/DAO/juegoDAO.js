@@ -12,6 +12,14 @@ const juegoDAO = {
 
     async buscarNombreExacto(name){
         return await Juego.findOne({name})
+    },
+
+    async actualizar(id, data){
+        return await Juego.findByIdAndUpdate(id, data, {new: true});
+    },
+    
+    async eliminar(id){
+        return await Juego.findByIdAndDelete(id);
     }
 
 };
