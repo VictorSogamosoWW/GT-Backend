@@ -1,13 +1,13 @@
-const commentDAO = require("../DAO/commentDAO");
+const comentarioDAO = require("../DAO/comentarioDAO");
 
-const commentBAO = {
+const comentarioBAO = {
     crear: async function (data) {
-        return await commentDAO.crear(data);
+        return await comentarioDAO.crear(data);
     },
 
     obtenerPorJuego: async function (idGame) {
-        return await commentDAO.obtenerPorJuego(idGame);
+        return await comentarioDAO.obtenerPorJuego(idGame);
     }
 };
 
-module.exports = commentBAO;
+module.exports = comentarioBAO;

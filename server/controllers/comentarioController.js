@@ -1,22 +1,22 @@
-const commentBAO = require("../BAO/commentBAO");
+const comentarioBAO = require("../BAO/comentarioBAO.js");
 
-exports.crearComentario = async (req, res) => {
+async function crearComentario(req, res) {
     try {
-        const comentario = await commentBAO.crear(req.body);
+        const comentario = await comentarioBAO.crear(req.body);
         res.json(comentario);
     } catch (error) {
         res.status(500).json({ error: "Error creando comentario" });
     }
 };
 
-exports.obtenerComentarios = async (req, res) => {
+async function obtenerComentarios(req, res) {
     try {
-        console.log("ID que llega:", req.params.idGame); // <--- verifica el id
-        const comentarios = await commentBAO.obtenerPorJuego(req.params.idGame);
-        console.log("Comentarios encontrados:", comentarios);
+        const comentarios = await comentarioBAO.obtenerPorJuego(req.params.idGame);
         res.json(comentarios);
     } catch (error) {
         console.error(error);
         res.status(500).json({ error: "Error obteniendo comentarios" });
     }
 };
+
+module.exports = {crearComentario, obtenerComentarios };

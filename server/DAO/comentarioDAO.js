@@ -6,7 +6,7 @@ const comentarioDAO = {
     },
 
     obtenerPorJuego: async function(idGame){
-        return (await comentario.find({idGame})).sort({created: -1});
+        return await comentario.find({idGame}).sort({created: -1});
     }
 };
 

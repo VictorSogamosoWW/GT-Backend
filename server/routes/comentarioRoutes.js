@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const commentController = require("../controllers/commentController");
+const comentarioController = require("../controllers/comentarioCOntroller.js");
 
-router.post("/", commentController.crearComentario);
-router.get("/:idGame", commentController.obtenerComentarios);
+router.post("/", comentarioController.crearComentario);
+router.get("/:idGame", comentarioController.obtenerComentarios);
 
 module.exports = router;
