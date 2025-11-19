@@ -7,7 +7,8 @@ const juegoSchema = new mongoose.Schema({
   imagen:     { type: String, default: "" },
   hoursPlayed:{ type: Number, default: 0 },
   status:     { type: Boolean, default: false },
-  rating:     { type: Number, default: 0 }
+  rating:     { type: Number, default: 0 },
+  review:     { type: String, default: "" }
 }, { timestamps: true });
 
 module.exports = mongoose.model('Juego', juegoSchema, 'game');

@@ -25,6 +25,7 @@ const juegoBAO = {
             data.hoursPlayed = Number(data.hoursPlayed) || 0;
             data.rating = Number(data.rating) || 0;
             data.status = (data.status === true ||  data.status === "true");
+            data.review = data.review || "";
 
             const creado = await juegoDAO.crear(data);
             return creado;
@@ -46,6 +47,7 @@ const juegoBAO = {
             data.hoursPlayed = Number(data.hoursPlayed) || 0;
             data.rating = Number(data.rating) || 0;
             data.status = (data.status === true || data.status === "true");
+            data.review = data.review || "";
 
             const actualizado = await juegoDAO.actualizar(id, data);
             
